@@ -14,7 +14,7 @@ function CompanyDetails() {
   const [extraStockDetail, setExtraStockDetail] = useState([]);
   const [companyDetail, setCompanyDetail] = useState([]);
 
- // let navigate = useNavigate();
+  let navigate = useNavigate();
 
   let options = [
     { id: 1, value: "companyName", label: "Company Name" },
