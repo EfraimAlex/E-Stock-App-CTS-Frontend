@@ -1,38 +1,209 @@
 .App {
-  text-align: center;
+  width: auto;
+  height: auto;
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-image: url("stock.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar{
+  background-image: linear-gradient(to right, #061629, #09294ef5, #061629);
+  width: 100%;
+  height: 9vh;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
   align-items: center;
+}
+
+.Navbar .Logo {
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.5);
+  margin: 0 6.5vw 0 2.5vw;
+}
+
+.Navbar .Logo img {
+  height: 7vh;
+  width: 7vh;
+}
+
+.Navbar .Links{
+  display: flex;
+  flex: 1;
+  height: 100%;
+}
+
+.Navbar .Links a:hover{
+  color: rgb(255, 196, 0);
+}
+
+
+.Navbar .Links a {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-decoration: none;
   color: white;
+  font-size: 2.2vmin;
+  margin-right: 3vw;  
 }
 
-.App-link {
-  color: #61dafb;
+.Navbar .Links .firstCentralLink {
+  margin-left: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Navbar .Links .firstRightLink{
+  margin-left: auto;
+}
+
+.logoutButton {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.2vmin;
+  margin-right: 3vw;
+}
+
+.logoutButton:hover {
+  color: rgb(255, 196, 0);
+}
+
+
+.SubmitButton .success{
+  background-color: #07192e;
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 5px 18px 5px 18px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  width: 150px;
+
+}
+
+.SubmitButton .cancel{
+  background-color: rgb(199, 42, 42);
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 5px 18px 5px 18px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  margin-left: 10px;
+
+}
+
+.SubmitButton{
+  align-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.SubmitButton :hover{
+  background-color: #012622c9;
+
+}
+h2{
+  color: red;
+  text-align: center;
+  padding: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.container{
+  margin-top: 30px;
+}
+
+.companyReg{
+  color:rgb(221, 22, 22);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.login{
+  color:rgb(29, 29, 77);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+.loginSuccess{
+  background-color: rgb(204, 45, 45);
+  text-align: center;
+  align-items: center;
+  color: white;
+  padding: 5px 18px 5px 18px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+}
+
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+
+.error{
+  color:red;
+  margin-top: 5px;
+}
+
+h1{
+  text-align: center;
+  color: #07192e;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  font-weight: bolder;
+}
+
+.section .d-flex{
+  text-align: center;
+  margin: auto;
+  
+}
+
+.Details{
+  text-align: center;
+  margin: auto;
+  width: auto;
+}
+
+input{
+  border: 2px solid red;
+  border-radius: 6px;
+  height: 35px;
+}
+
+select{
+  border-radius: 6px;
+  width: 200px;
+  height: 35px;
+}
+
+table {
+  border: 2px solid;
+  border-color: #07192e !important;
+
+}
+
+.card{
+  border-radius: 20px !important;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.425);
+}
+
+.text-center2{
+  margin-bottom: 50px;
+  margin-top: 8px;
+  text-align: center;
 }

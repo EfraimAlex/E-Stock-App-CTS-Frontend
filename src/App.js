@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React, { Fragment } from "react";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Login from "./Components/Login";
+import CompanyReg from "./Components/CompanyReg";
+import Navbar from "./Components/Navbar";
+import SignUp from "./Components/SignUp";
+import { Route, Routes } from "react-router-dom";
+import AllCompanies from "./Components/AllCompanies";
+import CompanyDetails from "./Components/CompanyDetails";
+import UpdateDetails from "./Components/UpdateDetails";
+import axios from "axios";
 
-function App() {
+export default function App() {
+  axios.defaults.headers.common[
+    "Authorization"
+  ] = `Bearer ${localStorage.token}`;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Routes>
+        {localStorage.isLoggedIn && localStorage.isLoggedIn === "true" ? (
+          <Fragment>
+            <Route path="/" element={<CompanyReg />} />
+            <Route path="/listAllCompanies" element={<AllCompanies />} />
+            <Route path="/companyDetails" element={<CompanyDetails />} />
+            <Route path="/updateDetails" element={<UpdateDetails />} />
+          </Fragment>
+        ) : (
+          <Fragment>
+            <Route path="/" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+          </Fragment>
+        )}
+      </Routes>
     </div>
   );
 }
-
-export default App;
