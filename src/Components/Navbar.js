@@ -22,7 +22,7 @@ export default function Navbar() {
   return (
     <div className="Navbar">
         <div className="Logo">
-        
+        <NavLink to="/"><img alt="logo" src={logo} /></NavLink>
         </div>
         <div className="Links">
         {localStorage.isLoggedIn && localStorage.isLoggedIn === 'true' ? (
@@ -34,8 +34,8 @@ export default function Navbar() {
           </Fragment>
         ) : (
           <Fragment>
-            {/* <NavLink to="/" className="firstRightLink" style={navLinkStyles}>Login&nbsp;<FaSignInAlt/></NavLink> */}
-            {/* <NavLink to="/signup" style={navLinkStyles}>Sign Up&nbsp;<FaUserPlus/></NavLink> */}
+            {<NavLink to="/" className="firstRightLink" style={navLinkStyles}>Login&nbsp;<FaSignInAlt/></NavLink> }
+            {<NavLink to="/signup" style={navLinkStyles}>Sign Up&nbsp;<FaUserPlus/></NavLink> }
           </Fragment>
         )}
         </div>

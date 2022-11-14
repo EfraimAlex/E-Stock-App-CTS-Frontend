@@ -3,61 +3,61 @@ import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const UpdateDetails = () => {
-  // const location = useLocation();
-  // const navigate = useNavigate();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // // console.log(location.state);
+  console.log(location.state);
 
-  // const [data, setData] = useState({
-  //   companyName: location.state.companyName,
-  //   companyCode: location.state.companyCode,
-  //   companyCEO: location.state.companyCEO,
-  //   companyTurnover: location.state.companyTurnover,
-  //   companyWebsite: location.state.companyWebsite,
-  //   stockExchange: location.state.stockExchange,
-  // });
+  const [data, setData] = useState({
+    companyName: location.state.companyName,
+    companyCode: location.state.companyCode,
+    companyCEO: location.state.companyCEO,
+    companyTurnover: location.state.companyTurnover,
+    companyWebsite: location.state.companyWebsite,
+    stockExchange: location.state.stockExchange,
+  });
 
-  // const handleChange = (e) => {
-  //   let newData = { ...data };
-  //   if (e.target.id === "companyTurnover" || e.target.id === "companyCode") {
-  //     newData = {
-  //       ...newData,
-  //       [e.target.id]: parseInt(e.target.value),
-  //     };
-  //     setData(newData);
-  //     console.log(data);
-  //   } else {
-  //     newData = {
-  //       ...newData,
-  //       [e.target.id]: e.target.value,
-  //     };
-  //     setData(newData);
-  //     console.log(data);
-  //   }
-  // };
-  // const handleSubmit = (e) => {
-  //   axios
-  //     .put(
-  //       `http://localhost:8088/api/v1.0/market/updateUsers/${data.companyCode}`,
-  //       { ...data }
-  //     )
-  //     .then((res) => {
-  //       // if (res.status === 200) {
-  //       // console.log(res);
-  //       localStorage.isLoggedIn = true;
-  //       alert("Updated Successfully!");
-  //       window.location = "/companyDetails";
-  //       // }
-  //     })
-  //     .catch((err) => {console.log(err)
-  //       alert("You are not Authorized");
-  //       window.location = "/companyDetails";
-  //     }
-  //     );
-  // };
+  const handleChange = (e) => {
+    let newData = { ...data };
+    if (e.target.id === "companyTurnover" || e.target.id === "companyCode") {
+      newData = {
+        ...newData,
+        [e.target.id]: parseInt(e.target.value),
+      };
+      setData(newData);
+      console.log(data);
+    } else {
+      newData = {
+        ...newData,
+        [e.target.id]: e.target.value,
+      };
+      setData(newData);
+      console.log(data);
+    }
+  };
+  const handleSubmit = (e) => {
+    axios
+      .put(
+        `http://localhost:8088/api/v1.0/market/updateUsers/${data.companyCode}`,
+        { ...data }
+      )
+      .then((res) => {
+        // if (res.status === 200) {
+        // console.log(res);
+        localStorage.isLoggedIn = true;
+        alert("Updated Successfully!");
+        window.location = "/companyDetails";
+        // }
+      })
+      .catch((err) => {console.log(err)
+        alert("You are not Authorized");
+        window.location = "/companyDetails";
+      }
+      );
+  };
   return (
     <div>
-      {/* <h1>Update Details</h1>
+      <h1>Update Details</h1>
       <form className="d-flex flex-column align-items-center">
         <label className="m-2" htmlFor="companyName">
           Company Code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -114,7 +114,7 @@ const UpdateDetails = () => {
             Submit
           </button>
         </div>
-      </form> */}
+      </form>
     </div>
   );
 };
