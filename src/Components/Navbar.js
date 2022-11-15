@@ -7,12 +7,12 @@ import logo from "../Logo.png";
 
 export default function Navbar() {
 
-  const navLinkStyles = ({ isActive}) => {
-    return{
-      color: isActive ? 'rgb(255, 196, 0)' : 'white',
+  // const navLinkStyles = ({ isActive}) => {
+  //   return{
+  //     color: isActive ? 'rgb(255, 196, 0)' : 'white',
       
-    }
-  }
+  //   }
+  // }
 
   const handleLogout = () => {
     localStorage.isLoggedIn = false;
